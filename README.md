@@ -50,6 +50,8 @@ From here, you can decide to use that as a stock browser wrapper, or obviously m
 ## Artifacts: Assets & Libraries
 The main Chromium artifact is a native shared library `.so`.  It also depends on a `.pak` file in the `/assets` folder (you'll find these in the `content-shell` app).  As built, these need to be included in your `/libs` and `/assets` folder of your project, and they *will* add a good 30-40MB of binary goodness to the size of your app.  However, if you're savvy, you could figure out a way to load those from a central location on the platform, so they don't have to be included in `.apk` file.  This will require code modifications.
 
+This project contains a snapshot in time binary build of Chromium for Android ([ARM](https://github.com/davisford/android-chromium-view/tree/master/content-shell/libs/armeabi-v7a) and [x86](https://github.com/davisford/android-chromium-view/tree/master/content-shell/libs/x86)).  Instructions below if you want to update Chromium.
+
 The rest of the projects include java source and Android assets that were authored by Google to get Chromium to show up in a standard Android view and interact with it.
 
 ## Gradle Support
@@ -66,7 +68,7 @@ Build the latest Chromium for Android (see instructions below).  Each project co
 Google updates this code constantly, so if you git pull on Chromium repo and rebuild, then copy the stuff over here, there's no guarantee that all of this won't break.
 
 ## License
-Nearly all of the source in here is copied from the Chromium project and thus subject to Chromium license(s) -- `LICENSE` files are found w/in each project.  This project also contains a snapshot in time binary build of Chromium for Android ([ARM](https://github.com/davisford/android-chromium-view/tree/master/content-shell/libs/armeabi-v7a) and [x86](https://github.com/davisford/android-chromium-view/tree/master/content-shell/libs/x86)).  Instructions below if you want to update Chromium.
+Nearly all of the source in here is copied from the Chromium project and thus subject to Chromium license(s) -- `LICENSE` files are found w/in each project. 
 
 ## What Version of Chromium Is It?
 
