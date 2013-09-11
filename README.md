@@ -1,5 +1,22 @@
 Android Chromium View
 =====================
+# Table Of Contents
+* [Introduction](https://github.com/davisford/android-chromium-view/edit/master/README.md#introduction)
+* [The Why](https://github.com/davisford/android-chromium-view/edit/master/README.md#why)
+* [Difference Between This & ChromeView](https://github.com/davisford/android-chromium-view/edit/master/README.md#what-is-the-difference-between-this--chromeview)
+* [What Do I Do With This](https://github.com/davisford/android-chromium-view/edit/master/README.md#what-do-i-do-with-this)
+* [Artifacts: Assets & Libraries](https://github.com/davisford/android-chromium-view/edit/master/README.md#artifacts-assets--libraries)
+* [Gradle Support](https://github.com/davisford/android-chromium-view/edit/master/README.md#gradle-support)
+* [Updating Chromium](https://github.com/davisford/android-chromium-view/edit/master/README.md#updating-chromium)
+* [License](https://github.com/davisford/android-chromium-view/edit/master/README.md#license)
+* [What Version Of Chromium Is It?](https://github.com/davisford/android-chromium-view/edit/master/README.md#what-version-of-chromium-is-it)
+* [Pre-requisites For Building Chromium](https://github.com/davisford/android-chromium-view/edit/master/README.md#pre-requisites-for-building-chromium)
+* [Debugging](https://github.com/davisford/android-chromium-view/edit/master/README.md#debugging)
+  * [Java](https://github.com/davisford/android-chromium-view/edit/master/README.md#java)
+  * [Remote Chrome DevTools](https://github.com/davisford/android-chromium-view/edit/master/README.md#remote-chrome-devtools)
+  * [GDB](https://github.com/davisford/android-chromium-view/edit/master/README.md#gdb)
+* [Pull Requests](https://github.com/davisford/android-chromium-view/edit/master/README.md#pull-requests)
+* [Invaluable Resources](https://github.com/davisford/android-chromium-view/edit/master/README.md#invaluable-resources)
 
 # Introduction
 
@@ -62,10 +79,40 @@ I build on a MBP using an Ubuntu 12.04 image I created in VMWare Fusion.  You wi
 
 If you have a spare machine to setup a build machine, I suppose that would be even nicer.
 
-# Tips
+# Debugging
 
-## Setting up for GDB debugging
+## Java
+Just use ADT and launch `content-shell` as: `Debug as Android Application`
+
+## Remote Chrome DevTools
+
+Yes, you can :)  You need a fairly recent copy of Google Chrome running on your dev machine along with the ADT bundle.
+
+First, remote shell into the device and add the command line switch to enable remote debug over USB:
+
+```shell
+$ adb shell
+shell@android:/ $
+```
+
+Content shell will read the file `/data/local/tmp/content-shell-command-line` at startup and apply whatever valid [switches](http://peter.sh/experiments/chromium-command-line-switches/) it finds.  You can quickly create this file with the remote usb debug switch as follows:
+
+```shell
+shell@android:/ $ echo chrome --remote-debugging-raw-usb > /data/local/tmp/content-shell-command-line
+```
+
+Connect your device with USB, and use ADT (or Gradle or command line tools, etc.) to start the `content-shell` Android application.  Now, you need to setup adb port forwarding for the debug protocol.  Execute this on your dev machine (not on the device itself):
+
+```shell
+$ adb forward tcp:9222 localabstract:content_shell_devtools_remote
+```
+
+Now, you can navigate to http://localhost:9222 using Chrome on your dev machine, and you should see the instance of `content_shell` -- you can inspect it and it will open up DevTools and allow you to remote debug.
+
+## GDB
 Something you may want to consider is to make the Chromium source available to your dev machine where you execute Android, so that you can attach gdb, and step through the native sources.  I still have to [document this setup](https://github.com/davisford/android-chromium-view/issues/8) 
+
+If you want to help, let me know.
 
 # Pull Requests
 
@@ -79,3 +126,4 @@ Don't send pull requests for Google authored code b/c it will just be re-written
 * [Chromium For Developers Docs](http://dev.chromium.org/developers) - best start reading if you want to really get into this
 * [Chromium For Android Build Instructions](https://code.google.com/p/chromium/wiki/AndroidBuildInstructions) - instructions and scripts provided by @pwnall in [chromeview](https://github.com/davisford/chromeview/tree/master/crbuild) parse this down, but I'm just dropping this here for reference
 * [Android WebView Talk At Google I/O 2012](https://developers.google.com/events/io/2012/sessions/gooio2012/122/) - might prove useful for some background info
+
