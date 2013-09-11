@@ -1,22 +1,22 @@
 Android Chromium View
 =====================
 # Table Of Contents
-* [Introduction](https://github.com/davisford/android-chromium-view/edit/master/README.md#introduction)
-* [The Why](https://github.com/davisford/android-chromium-view/edit/master/README.md#why)
-* [Difference Between This & ChromeView](https://github.com/davisford/android-chromium-view/edit/master/README.md#what-is-the-difference-between-this--chromeview)
-* [What Do I Do With This](https://github.com/davisford/android-chromium-view/edit/master/README.md#what-do-i-do-with-this)
-* [Artifacts: Assets & Libraries](https://github.com/davisford/android-chromium-view/edit/master/README.md#artifacts-assets--libraries)
-* [Gradle Support](https://github.com/davisford/android-chromium-view/edit/master/README.md#gradle-support)
-* [Updating Chromium](https://github.com/davisford/android-chromium-view/edit/master/README.md#updating-chromium)
-* [License](https://github.com/davisford/android-chromium-view/edit/master/README.md#license)
-* [What Version Of Chromium Is It?](https://github.com/davisford/android-chromium-view/edit/master/README.md#what-version-of-chromium-is-it)
-* [Pre-requisites For Building Chromium](https://github.com/davisford/android-chromium-view/edit/master/README.md#pre-requisites-for-building-chromium)
-* [Debugging](https://github.com/davisford/android-chromium-view/edit/master/README.md#debugging)
-  * [Java](https://github.com/davisford/android-chromium-view/edit/master/README.md#java)
-  * [Remote Chrome DevTools](https://github.com/davisford/android-chromium-view/edit/master/README.md#remote-chrome-devtools)
-  * [GDB](https://github.com/davisford/android-chromium-view/edit/master/README.md#gdb)
-* [Pull Requests](https://github.com/davisford/android-chromium-view/edit/master/README.md#pull-requests)
-* [Invaluable Resources](https://github.com/davisford/android-chromium-view/edit/master/README.md#invaluable-resources)
+* [Introduction](https://github.com/davisford/android-chromium-view#introduction)
+* [The Why](https://github.com/davisford/android-chromium-view#why)
+* [Difference Between This & ChromeView](https://github.com/davisford/android-chromium-view#what-is-the-difference-between-this--chromeview)
+* [What Do I Do With This](https://github.com/davisford/android-chromium-view#what-do-i-do-with-this)
+* [Artifacts: Assets & Libraries](https://github.com/davisford/android-chromium-view#artifacts-assets--libraries)
+* [Gradle Support](https://github.com/davisford/android-chromium-view#gradle-support)
+* [Updating Chromium](https://github.com/davisford/android-chromium-view#updating-chromium)
+* [License](https://github.com/davisford/android-chromium-view#license)
+* [What Version Of Chromium Is It?](https://github.com/davisford/android-chromium-view#what-version-of-chromium-is-it)
+* [Pre-requisites For Building Chromium](https://github.com/davisford/android-chromium-view#pre-requisites-for-building-chromium)
+* [Debugging](https://github.com/davisford/android-chromium-view#debugging)
+  * [Java](https://github.com/davisford/android-chromium-view#java)
+  * [Remote Chrome DevTools](https://github.com/davisford/android-chromium-view#remote-chrome-devtools)
+  * [GDB](https://github.com/davisford/android-chromium-view#gdb)
+* [Pull Requests](https://github.com/davisford/android-chromium-view#pull-requests)
+* [Invaluable Resources](https://github.com/davisford/android-chromium-view#invaluable-resources)
 
 # Introduction
 
