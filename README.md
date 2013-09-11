@@ -66,7 +66,7 @@ Build the latest Chromium for Android (see instructions below).  Each project co
 Google updates this code constantly, so if you git pull on Chromium repo and rebuild, then copy the stuff over here, there's no guarantee that all of this won't break.
 
 ## License
-Nearly all of the source in here is copied from the Chromium project and thus subject to Chromium license(s) -- `LICENSE` files are found w/in each project.  This project also contains a snapshot in time binary build of Chromium for Android (ARM target only).  Instructions below if you want to update Chromium.
+Nearly all of the source in here is copied from the Chromium project and thus subject to Chromium license(s) -- `LICENSE` files are found w/in each project.  This project also contains a snapshot in time binary build of Chromium for Android ([ARM](https://github.com/davisford/android-chromium-view/tree/master/content-shell/libs/armeabi-v7a) and [x86](https://github.com/davisford/android-chromium-view/tree/master/content-shell/libs/x86)).  Instructions below if you want to update Chromium.
 
 ## What Version of Chromium Is It?
 
