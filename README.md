@@ -112,9 +112,9 @@ $ adb forward tcp:9222 localabstract:content_shell_devtools_remote
 Now, you can navigate to http://localhost:9222 using Chrome on your dev machine, and you should see the instance of `content_shell` -- you can inspect it and it will open up DevTools and allow you to remote debug.
 
 ## GDB
-Something you may want to consider is to make the Chromium source available to your dev machine where you execute Android, so that you can attach gdb, and step through the native sources.  I still have to [document this setup](https://github.com/davisford/android-chromium-view/issues/8) 
+If you want to debug native code, you'll need a rooted device.  I suggest [http://www.cyanogenmod.org/](Cyanogenmod), but I guess you'll figure out how to root your own platform.  More specifically, if the command `adb root` works, you'll be in pretty good business.  
 
-If you want to help, let me know.
+If you built Chromium yourself, you're in luck, b/c there is an [https://code.google.com/p/chromium/codesearch#chromium/src/build/android/adb_gdb_content_shell&sq=package:chromium&type=cs](adb_gdb_content_shell) script which can connect gdb to your instance of `ContentShell1`.  It ends up calling out to [https://code.google.com/p/chromium/codesearch#chromium/src/build/android/adb_gdb&sq=package:chromium&type=cs](adb_gdb) which has a little more meat if you want to investigate how it works and re-write for your environment. 
 
 # Pull Requests
 
