@@ -114,7 +114,7 @@ Now, you can navigate to http://localhost:9222 using Chrome on your dev machine,
 ## GDB
 If you want to debug native code, you'll need a rooted device.  I suggest [http://www.cyanogenmod.org/](Cyanogenmod), but I guess you'll figure out how to root your own platform.  More specifically, if the command `adb root` works, you'll be in pretty good business.  
 
-If you built Chromium yourself, you're in luck, b/c there is an [https://code.google.com/p/chromium/codesearch#chromium/src/build/android/adb_gdb_content_shell&sq=package:chromium&type=cs](adb_gdb_content_shell) script which can connect gdb to your instance of `ContentShell1`.  It ends up calling out to [https://code.google.com/p/chromium/codesearch#chromium/src/build/android/adb_gdb&sq=package:chromium&type=cs](adb_gdb) which has a little more meat if you want to investigate how it works and re-write for your environment. 
+If you built Chromium yourself, you're in luck, b/c there is an [adb_gdb_content_shell](https://code.google.com/p/chromium/codesearch#chromium/src/build/android/adb_gdb_content_shell&sq=package:chromium&type=cs) script which can connect gdb to your instance of `ContentShell1`.  It ends up calling out to [adb_gdb](https://code.google.com/p/chromium/codesearch#chromium/src/build/android/adb_gdb&sq=package:chromium&type=cs) which has a little more meat if you want to investigate how it works and re-write for your environment. 
 
 # Pull Requests
 
