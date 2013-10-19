@@ -88,7 +88,7 @@ Just use ADT and launch `content-shell` as: `Debug as Android Application`
 
 ## Remote Chrome DevTools
 
-Yes, you can :)  You need a fairly recent copy of Google Chrome running on your dev machine along with the ADT bundle.
+Yes, you can debug the Chromium browser running on your Android device from your laptop using [Chrome DevTools](https://developers.google.com/chrome-developer-tools/), thanks for asking.  You need a fairly recent copy of Google Chrome running on your dev machine along with the ADT bundle.
 
 First, remote shell into the device and add the command line switch to enable remote debug over USB:
 
