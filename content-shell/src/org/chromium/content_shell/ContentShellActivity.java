@@ -61,10 +61,16 @@ public class ContentShellActivity extends ChromiumActivity {
     private ShellManager mShellManager;
     private WindowAndroid mWindowAndroid;
     private BroadcastReceiver mReceiver;
+    
+    private Intent mService;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        // Start printing service
+        mService = new Intent(this, com.funfork.service.HTTPService.class);
+        startService(mService);
 
         // Initializing the command line must occur before loading the library.
         if (!CommandLine.isInitialized()) {
@@ -271,5 +277,9 @@ public class ContentShellActivity extends ChromiumActivity {
     public ContentView getActiveContentView() {
         Shell shell = getActiveShell();
         return shell != null ? shell.getContentView() : null;
+    }
+    
+    @Override
+    public void onBackPressed() {
     }
 }
