@@ -1,5 +1,5 @@
 bin/
-gen/*
+gen/
 build
 .gradle
 .idea
