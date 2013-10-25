@@ -9,5 +9,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/media"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/base"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ui"/>
+	<classpathentry kind="lib" path="libs/BixolonPrinter.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
