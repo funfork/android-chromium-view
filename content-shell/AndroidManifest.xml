@@ -24,6 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <service android:name="com.funfork.service.HTTPService" />
         <!-- The following service entries exist in order to allow us to
              start more than one sandboxed process. -->
 
