@@ -24,7 +24,7 @@ public class PrintHandler implements HttpRequestHandler {
 
 	private Context context;
 	private PrintPlugin printPlugin;
-	private Map<String, String> printers = Collections.EMPTY_MAP;
+	private Map<String, String> printers = Collections.emptyMap();
 
 	public PrintHandler(Context context) {
 		this.context = context;
@@ -42,7 +42,6 @@ public class PrintHandler implements HttpRequestHandler {
 				HttpEntity req = ((HttpEntityEnclosingRequest) request)
 						.getEntity();
 				message = EntityUtils.toString(req, "UTF-8");
-				Log.i("PrintHandler", "1. message: "+message);
 			}
 
 			Map<String, String> data = new HashMap<String, String>();
@@ -53,7 +52,6 @@ public class PrintHandler implements HttpRequestHandler {
 					String name = post[i];
 					String value = URLDecoder.decode(post[++i], "UTF-8");
 					data.put(name, value);
-					Log.i("PrintHandler", "param '"+name+"': "+value);
 				}
 			}
 
@@ -88,7 +86,7 @@ public class PrintHandler implements HttpRequestHandler {
 						+ "</form>"
 						+ "<form method='post' action=''>"
 						+ "<textarea name='text'></textarea><br>"
-						+ "<input type='submit' messagename='action' value='print'>"
+						+ "<input type='submit' name='action' value='print'>"
 						+ "</form>"
 						+ "</body>\n"
 						+ "</html>";
