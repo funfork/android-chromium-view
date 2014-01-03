@@ -99,21 +99,20 @@ public class PrintHandler implements HttpRequestHandler {
 			e.printStackTrace();
 		}
 	}
-
+	
 	private String processMap() {
 		String result;
 		printers = printPlugin.mapPrinters(5000);
 		if (printers != null) {
 			Iterator<String> i = printers.keySet().iterator();
 			StringBuilder builder = new StringBuilder();
-			builder.append("{");
+			builder.append("[");
 			while (i.hasNext()) {
 				String key = (String) i.next();
-				String value = (String) printers.get(key);
-				builder.append("\"" + key + "\":\"" + value + "\"");
+				builder.append("{\"key\":\"" + key + "\"}");
 				if (i.hasNext()) builder.append(",");
 			}
-			builder.append("}");
+			builder.append("]");
 			result = builder.toString();
 		} else {
 			result = "No printers found";
