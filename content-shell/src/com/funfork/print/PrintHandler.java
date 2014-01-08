@@ -92,8 +92,8 @@ public class PrintHandler implements HttpRequestHandler {
 						+ "</html>";
 			}
 			
-			response.addHeader("Access-Control-Allow-Origin", "*");
 			response.addHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+			response.addHeader("Access-Control-Allow-Origin", "*");
 			response.setEntity(new StringEntity(result));
 		} catch (Exception e) {
 			e.printStackTrace();
